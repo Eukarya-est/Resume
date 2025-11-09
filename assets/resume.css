@@ -1,0 +1,580 @@
+:root {
+  --white: #ffffff;
+  --black: #0f0000;
+  --orange: #ffb300;
+  --yellow: #fdd835;
+  --dark-pink: #ad1457;
+  --light-pink: #d81b60;
+  --red-mahogany: #440c08;
+  --crimson-tide: #6E1313;
+  --rose-quartz: #f4b3b3;
+  --gray: #848484;
+  --light-gray: #777777;
+
+  --side-bar-height: calc(800px); 
+}
+
+/* --- GENERAL --- */
+* {
+  box-sizing: border-box;
+  transition: 0.35s ease;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+/* --- BLOCK & INLINE --- */
+.rela-block {
+  display: block;
+  position: relative;
+  margin: auto;
+}
+
+.rela-inline {
+  display: inline-block;
+  position: relative;
+  margin: auto;
+}
+
+.floated {
+  display: inline-block;
+  position: relative;
+  /* float: left; */
+}
+
+/* --- ABSOLUTE CENTER --- */
+.abs-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  width: 88%;
+}
+
+.select-box{
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  z-index: 10;
+}
+
+.select-lang{
+  padding: 5px;
+  border-radius: 5px;
+  background-color: var(--black);
+  border: 1px solid var(--white);
+  color: var(--white);
+}
+
+.english{
+  font-family: 'Raleway';
+  font-size: 16px;
+  letter-spacing: 1px;
+  font-weight: 400;
+}
+
+.japanese{
+  font-family: 'Noto Serif JP';
+  font-size: 16px;
+  letter-spacing: 1px;
+  font-weight: 400;
+}
+
+/* --- BODY & TEXT --- */
+body:lang(en) {
+  font-family: 'Open Sans';
+  font-size: 18px;
+  letter-spacing: 0px;
+  font-weight: 400;
+  line-height: 28px;
+  background: url('http://kingofwallpapers.com/leaves/leaves-016.jpg') right no-repeat;
+  background-size: cover;
+}
+
+body:lang(jp) {
+  font-family: 'Noto Serif JP';
+  font-size: 18px;
+  letter-spacing: 0px;
+  font-weight: 400;
+  line-height: 28px;
+  background: url('http://kingofwallpapers.com/leaves/leaves-016.jpg') right no-repeat;
+  background-size: cover;
+}
+
+body:before {
+  content: "";
+  position: fixed;
+  margin: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(255, 255, 255, 0.92);
+}
+
+.caps {
+  text-transform: uppercase;
+}
+
+.justified {
+  text-align: justify;
+}
+
+p.light {
+  color: var(--light-gray);
+}
+
+h2:lang(en) {
+  font-family: 'Open Sans';
+  font-size: 30px;
+  letter-spacing: 5px;
+  font-weight: 600;
+  line-height: 40px;
+  color: var(--black);
+}
+
+h2:lang(jp) {
+  font-family: 'Noto Serif JP';
+  font-size: 30px;
+  letter-spacing: 5px;
+  font-weight: 600;
+  line-height: 40px;
+  color: var(--black);
+}
+
+h3:lang(en) {
+  font-family: 'Open Sans';
+  font-size: 21px;
+  letter-spacing: 1px;
+  font-weight: 600;
+  line-height: 28px;
+  color: var(--black);
+  text-decoration: underline;
+}
+
+h3:lang(jp) {
+  font-family: 'Noto Serif JP';
+  font-size: 21px;
+  letter-spacing: 1px;
+  font-weight: 600;
+  line-height: 28px;
+  color: var(--black);
+  text-decoration: underline;
+}
+
+/* --- PAGE --- */
+.page {
+  width: 90%;
+  max-width: 1200px;
+  margin: 80px auto;
+  background-color: white;
+  box-shadow: 6px 10px 28px 0px rgba(0, 0, 0, 0.4);
+}
+
+/* --- TOP BAR --- */
+.top-bar {
+  height: 220px;
+  background-color: var(--gray);
+  color: white;
+}
+
+/* --- NAME --- */
+.name {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: calc(350px + 5%);
+  height: 120px;
+  text-align: center;
+  font-family: 'Raleway';
+  font-size: 58px;
+  letter-spacing: 8px;
+  font-weight: 100;
+  line-height: 60px;
+}
+
+.name div {
+  width: 94%;
+}
+
+/* --- SIDEBAR --- */
+.side-bar {
+  position: absolute;
+  top: 0px;
+  left: 5%;
+  width: 350px;
+  height: var(--side-bar-height);
+  background-color: var(--crimson-tide);
+  padding: 320px 30px 50px;
+}
+
+.side-bar-cuff {
+  position: absolute;
+  top: var(--side-bar-height);
+  left: 5%;
+  width: 5px;
+  height: 0px;
+  background-color: transparent;
+  border-left: 175px solid transparent;
+  border-right: 175px solid transparent;
+  border-top: 175px solid var(--crimson-tide);
+}
+
+/* --- MUGSHOT --- */
+.mugshot {
+  position: absolute;
+  top: 50px;
+  left: 50px;
+  height: 210px;
+  width: 210px;
+}
+
+.mugshot .profile-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 250px;
+  width: 250px;
+  object-fit: cover;
+  border-radius: 50%;
+  border-color: white;
+  border-width: 10px;
+  border-style: solid;
+}
+
+.cryptedmail:after {
+    content: attr(data-name) "@" attr(data-domain) "." attr(data-tld); 
+}
+
+/* --- PROFILE BAR --- */
+
+#info{
+  color: white;
+}
+
+#info-icons {
+  position: relative;
+  top: 0.7em;
+  margin-right: 5px;
+  width: 40px;
+  height: 40px;
+}
+
+.birthday-icon {
+  display: inline-block;
+  background-image: url('./icons/cake-candles.svg');
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.address-icon {
+  display: inline-block;
+  background-image: url('./icons/location-dot.svg');
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.envelope-icon {
+  display: inline-block;
+  background-image: url('./icons/envelope.svg');
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.link{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+  text-align: center;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.link-icon-wrapper{
+  width: 50px;
+  height: 50px;
+  padding: 5px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.link-icons {
+  width: 40px;
+  height: 40px;
+}
+
+.link-icon-wrapper:hover{
+  border-radius: 20%; 
+  background-color: var(--white);
+  cursor: pointer;
+}
+
+#linkedin-icon{
+  display: inline-block;
+  background-image: url('./icons/linkedin-brands.svg');
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+#github-icon{
+  display: inline-block;
+  background-image: url('./icons/github-brands.svg');
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+/* --- SIDE HEADER --- */
+.side-header:lang(en) {
+  font-family: 'Open Sans';
+  font-size: 18px;
+  letter-spacing: 4px;
+  font-weight: 600;
+  line-height: 28px;
+  margin: 60px auto 10px;
+  padding-bottom: 5px;
+  border-bottom: 1px solid var(--gray);
+}
+
+/* --- SIDE HEADER --- */
+.side-header:lang(jp) {
+  font-family: 'Noto Serif JP';
+  font-size: 18px;
+  letter-spacing: 4px;
+  font-weight: 600;
+  line-height: 28px;
+  margin: 60px auto 10px;
+  padding-bottom: 5px;
+  border-bottom: 1px solid var(--gray);
+}
+
+/* --- LIST --- */
+.list-thing {
+  padding-left: 25px;
+  margin-bottom: 10px;
+}
+
+/* --- CONTENT CONTAINER --- */
+.content-container {
+  margin-right: 0;
+  width: calc(95% - 350px);
+  padding: 25px 40px 50px;
+}
+
+.content-container > * {
+  margin: 0 auto 25px;
+}
+
+.content-container > h3 {
+  margin: 0 auto 5px;
+}
+
+.content-container > p.long-margin {
+  margin: 0 auto auto;
+}
+
+.long-margin {
+  opacity: 0;
+}
+
+.liner {
+  float: left;
+  margin-bottom: 15px;
+}
+
+.liner small {
+  display: block;
+  opacity: 0.7;
+}
+
+.liner ul li {
+  position: relative;
+  margin-left: 15px;
+  padding-left: 25px;
+  padding-bottom: 15px;
+}
+
+.liner ul li:hover::before {
+  animation: circle 1.2s infinite;
+}
+
+.liner ul li:hover span {
+  color: var(--red-mahogany);
+}
+
+@keyframes circle {
+  from {
+    box-shadow: 0 0 0 0px var(--red-mahogany);
+  }
+
+  to {
+    box-shadow: 0 0 0 6px rgba(255, 255, 255, 0);
+  }
+
+}
+
+.liner ul li:first-of-type::before {
+  width: 10px;
+  height: 10px;
+  left: 1px;
+}
+
+.liner ul li:last-of-type {
+  padding-bottom: 3px;
+}
+
+.liner ul li:last-of-type::after {
+  border-radius: 1.5px;
+}
+
+.liner ul li::before,
+.liner ul li::after {
+  content: "";
+  display: block;
+  position: absolute;
+}
+
+.liner ul li::before {
+  width: 7px;
+  height: 7px;
+  border: 3px solid var(--white);
+  background: var(--red-mahogany);
+  border-radius: 50%;
+  left: 3px;
+  z-index: 1;
+}
+
+.liner ul li::after {
+  width: 1px;
+  height: 100%;
+  background: var(--light-gray);
+  left: 9px;
+  top: 0;
+}
+
+.liner ul li span {
+  transition-duration: 0.3s;
+}
+
+.liner {
+  width: 100%;
+  background: var(--white);
+  padding: 15px;
+}
+
+/* --- TITLE --- */
+.title {
+  width: 80%;
+  text-align: center;
+}
+
+/* --- SEPARATOR --- */
+.separator {
+  width: 240px;
+  height: 2px;
+  background-color: #999;
+}
+
+/* --- GREYED --- */
+.greyed:lang(en) {
+  background-color: #DDD;
+  width: 100%;
+  max-width: 580px;
+  text-align: center;
+  font-family: 'Open Sans';
+  font-size: 18px;
+  letter-spacing: 6px;
+  font-weight: 600;
+  line-height: 28px;
+}
+
+.greyed:lang(jp) {
+  background-color: #DDD;
+  width: 100%;
+  max-width: 580px;
+  text-align: center;
+  font-family: 'Noto Serif JP';
+  font-size: 18px;
+  letter-spacing: 6px;
+  font-weight: 600;
+  line-height: 28px;
+}
+
+.type-list{
+  list-style-type: disc;
+  margin-left: 20px;
+}
+
+.type-list-child{
+  list-style-type: circle;
+  margin-left: 20px;
+}
+
+.flow-img{
+  width: 100%;
+  max-width: 720px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border-color: var(--crimson-tide);
+  border-width: 4px;
+  border-style: solid;
+}
+
+.mufg-img{
+  width: 100%;
+  max-width: 400px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border-color: var(--crimson-tide);
+  border-width: 4px;
+  border-style: solid;
+}
+
+/* --- RESPONSIVE --- */
+@media screen and (max-width: 1150px) {
+  .name:lang(en) {
+    color: white;
+    font-family: 'Raleway';
+    font-size: 38px;
+    letter-spacing: 6px;
+    font-weight: 100;
+    line-height: 48px;
+  }
+}
+
+.name:lang(jp) {
+  font-family: 'Noto Serif JP';
+}
+
+#content-flag-icon{
+  display: inline-block;
+  width: 25px;
+  height: 17px;
+  margin-left: 8px;
+  margin-top: -4px;
+  vertical-align: middle;
+  border-color: var(--black);
+  border-width: 1px;
+  border-style: solid;
+}
+
+.kr{
+  background-image: url('./icons/kr.svg');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.jp{
+  background-image: url('./icons/jp.svg');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.en{
+  background-image: url('./icons/us-uk.svg');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
