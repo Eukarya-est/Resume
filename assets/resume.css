@@ -244,15 +244,38 @@ h3:lang(jp) {
   border-width: 10px;
   border-style: solid;
 }
+/* --- EMAIL --- */
+.mail {
+  display: flex;
+  position: relative;
+  margin: auto;
+}
 
 .cryptedmail:after {
-    content: attr(data-name) "@" attr(data-domain) "." attr(data-tld); 
+    content: attr(data-name) "@" attr(data-domain) "." attr(data-tld);
+    color: var(--white) 
+}
+
+.copy{
+  margin: 20px 0 15px 15px;
+  border-radius: 5px;
+  background-color: var(--crimson-tide);
+  border: 3px solid var(--white);
+  color: var(--white);
+  cursor: pointer;
+}
+
+.copy:hover{
+  background-color: var(--white);
+  border: 3px solid var(--crimson-tide);
+  color: var(--crimson-tide);
+  cursor: pointer;
 }
 
 /* --- PROFILE BAR --- */
 
 #info{
-  color: white;
+  color: var(--white);
 }
 
 #info-icons {
